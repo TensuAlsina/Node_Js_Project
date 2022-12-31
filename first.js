@@ -5,4 +5,13 @@
 // printName("Rasta")
 // console.log(global)
 
-console.log("bob")
+// const checkSet = ()=>{
+//     setTimeout(()=>{
+//         console.log("Rasta")
+//     },3000)
+// }
+
+// checkSet()
+
+console.log(__dirname)
+console.log(__filename)
