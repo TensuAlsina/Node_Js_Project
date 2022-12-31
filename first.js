@@ -3,4 +3,6 @@
 // }
 
 // printName("Rasta")
-console.log(global)
+// console.log(global)
+
+console.log("bob")
