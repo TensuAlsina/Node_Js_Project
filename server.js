@@ -3,12 +3,25 @@ const fs = require("fs")
 const server = http.createServer((request,response)=>{
     console.log("Request Made")
     // console.log(request.method)
-    
+    const requestPage = request.url;
+     
     response.setHeader('Content-Type','text/html')
-    fs.readFile('./views/index.html',(err,data)=>{
+    let path = "./views/"
+    switch (request.url) {
+        case "/":
+            path += "index.html"
+            break;
+        case "/about":
+            path += "about.html"
+            break
+        default:
+            path += "404.html"
+            break;
+    }
+    fs.readFile(path,(err,data)=>{
         if(err)console.log("There is Error Tensu")
-        response.write(data)
-        response.end()
+        // response.write(data)
+        response.end(data)
 
     })
     // response.write("<h1>Welcome Every Body</h1>")
